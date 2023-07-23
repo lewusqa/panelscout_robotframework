@@ -1,108 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230723 18:59:02.473" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230723 20:28:00.218" rpa="false" schemaversion="4">
 <suite id="s1" name="Test Login Rf" source="C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot">
-<test id="s1-t1" name="Login Test" line="7">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.example.com</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230723 18:59:02.865" level="INFO">Opening browser 'Chrome' to base url 'https://www.example.com'.</msg>
-<msg timestamp="20230723 18:59:02.865" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20230723 18:59:02.865" level="FAIL">TypeError: WebDriver.__init__() got an unexpected keyword argument 'service_log_path'</msg>
-<status status="FAIL" starttime="20230723 18:59:02.865" endtime="20230723 18:59:02.869"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=username</arg>
-<arg>testuser</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=password</arg>
-<arg>testpassword</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>id=login_button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Welcome, testuser</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Logout</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.871" endtime="20230723 18:59:02.871"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.875" endtime="20230723 18:59:02.875"/>
-</kw>
-<doc>Test the login functionality of the website</doc>
-<status status="FAIL" starttime="20230723 18:59:02.864" endtime="20230723 18:59:02.875">TypeError: WebDriver.__init__() got an unexpected keyword argument 'service_log_path'</status>
-</test>
-<test id="s1-t2" name="Login to the system" line="28">
+<test id="s1-t1" name="Login to the system" line="14">
 <kw name="Open login page">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230723 18:59:02.880" level="FAIL">Variable '${LOGIN URL}' not found.</msg>
-<status status="FAIL" starttime="20230723 18:59:02.880" endtime="20230723 18:59:02.880"/>
+<msg timestamp="20230723 20:28:00.688" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<status status="PASS" starttime="20230723 20:28:00.684" endtime="20230723 20:28:05.707"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Scouts panel - sign in</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20230723 18:59:02.880" endtime="20230723 18:59:02.880"/>
+<msg timestamp="20230723 20:28:05.753" level="INFO">Page title is 'Scouts panel - sign in'.</msg>
+<status status="PASS" starttime="20230723 20:28:05.707" endtime="20230723 20:28:05.753"/>
 </kw>
-<status status="FAIL" starttime="20230723 18:59:02.880" endtime="20230723 18:59:02.880"/>
+<status status="PASS" starttime="20230723 20:28:00.684" endtime="20230723 20:28:05.753"/>
 </kw>
 <kw name="Type in email">
-<status status="NOT RUN" starttime="20230723 18:59:02.883" endtime="20230723 18:59:02.883"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAILINPUT}</arg>
+<arg>user07@getnada.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 20:28:05.758" level="INFO">Typing text 'user07@getnada.com' into text field 'xpath=//*[@id='login']'.</msg>
+<status status="PASS" starttime="20230723 20:28:05.756" endtime="20230723 20:28:06.474"/>
+</kw>
+<status status="PASS" starttime="20230723 20:28:05.755" endtime="20230723 20:28:06.474"/>
 </kw>
 <kw name="Type in password">
-<status status="NOT RUN" starttime="20230723 18:59:02.883" endtime="20230723 18:59:02.883"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORDINPUT}</arg>
+<arg>Test-1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 20:28:06.477" level="INFO">Typing text 'Test-1234' into text field 'xpath=//*[@id='password']'.</msg>
+<status status="PASS" starttime="20230723 20:28:06.475" endtime="20230723 20:28:06.823"/>
+</kw>
+<status status="PASS" starttime="20230723 20:28:06.474" endtime="20230723 20:28:06.823"/>
 </kw>
 <kw name="Click on the Submit button">
-<status status="NOT RUN" starttime="20230723 18:59:02.883" endtime="20230723 18:59:02.883"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[(text()= 'Sign in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 20:28:06.823" level="INFO">Clicking element 'xpath=//*[(text()= 'Sign in')]'.</msg>
+<status status="PASS" starttime="20230723 20:28:06.823" endtime="20230723 20:28:06.980"/>
+</kw>
+<status status="PASS" starttime="20230723 20:28:06.823" endtime="20230723 20:28:06.980"/>
 </kw>
 <kw name="Assert dashboard">
-<status status="NOT RUN" starttime="20230723 18:59:02.883" endtime="20230723 18:59:02.883"/>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1 min</arg>
+<arg>1 sec</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${PAGELOGO}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAGELOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 20:28:06.985" endtime="20230723 20:28:09.187"/>
+</kw>
+<status status="PASS" starttime="20230723 20:28:06.985" endtime="20230723 20:28:09.187"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Scouts panel</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230723 20:28:09.201" level="INFO">Page title is 'Scouts panel'.</msg>
+<status status="PASS" starttime="20230723 20:28:09.187" endtime="20230723 20:28:09.201"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>alert.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230723 20:28:09.526" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="alert.png"&gt;&lt;img src="alert.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230723 20:28:09.201" endtime="20230723 20:28:09.526"/>
+</kw>
+<status status="PASS" starttime="20230723 20:28:06.985" endtime="20230723 20:28:09.526"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230723 18:59:02.883" endtime="20230723 18:59:02.883"/>
+<status status="PASS" starttime="20230723 20:28:09.542" endtime="20230723 20:28:16.816"/>
 </kw>
-<status status="FAIL" starttime="20230723 18:59:02.875" endtime="20230723 18:59:02.883">Variable '${LOGIN URL}' not found.</status>
+<status status="PASS" starttime="20230723 20:28:00.684" endtime="20230723 20:28:16.816"/>
 </test>
 <doc>Suite description</doc>
-<status status="FAIL" starttime="20230723 18:59:02.477" endtime="20230723 18:59:02.887"/>
+<status status="PASS" starttime="20230723 20:28:00.222" endtime="20230723 20:28:16.816"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Test Login Rf">Test Login Rf</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Login Rf">Test Login Rf</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230723 18:59:02.465" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 3: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
-<msg timestamp="20230723 18:59:02.477" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 20: Setting variable ' ${LOGIN URL}' failed: Invalid variable name ' ${LOGIN URL}'.</msg>
-<msg timestamp="20230723 18:59:02.477" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 21: Setting variable ' ${BROWSER}' failed: Invalid variable name ' ${BROWSER}'.</msg>
-<msg timestamp="20230723 18:59:02.477" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 22: Setting variable ' ${SIGNINBUTTON}' failed: Invalid variable name ' ${SIGNINBUTTON}'.</msg>
-<msg timestamp="20230723 18:59:02.477" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 23: Setting variable ' ${EMAILINPUT}' failed: Invalid variable name ' ${EMAILINPUT}'.</msg>
-<msg timestamp="20230723 18:59:02.481" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 24: Setting variable ' ${PASSWORDINPUT}' failed: Invalid variable name ' ${PASSWORDINPUT}'.</msg>
-<msg timestamp="20230723 18:59:02.481" level="ERROR">Error in file 'C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\panelscout_robotframework\test_login_rf.robot' on line 25: Setting variable ' ${PAGELOGO}' failed: Invalid variable name ' ${PAGELOGO}'.</msg>
 </errors>
 </robot>
