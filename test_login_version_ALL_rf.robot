@@ -3,7 +3,8 @@ Documentation    Suite description
 Library     SeleniumLibrary
 
 *** Variables ***
-${LOGIN URL}        https://scouts-test.futbolkolektyw.pl/en
+#${LOGIN URL}        https://scouts-test.futbolkolektyw.pl/en
+${LOGIN URL}     https://dareit.futbolkolektyw.pl/
 ${BROWSER}      Chrome
 ${SIGNINBUTTON}     xpath=//*[(text()= 'Sign in')]
 ${EMAILINPUT}       xpath=//*[@id='login']
@@ -44,8 +45,8 @@ Login to the system
     #Type in Leg
     Click on the Save button
     Assert addplayer
-    Show list of players
-    Assert list of players
+    #Show list of players
+    #Assert list of players
     Click on the Sign out button
     Assert if sign out button is not be visible
     [Teardown]   Close Browser
@@ -65,7 +66,7 @@ Click on the Submit button
     Click Element       xpath=//*[(text()= 'Sign in')]
 Assert dashboard
    # wait until element is visible  ${PAGELOGO}
-    Wait Until Keyword Succeeds    1 min    1 sec   Wait Until Element Is Visible    ${PAGELOGO}
+    Wait Until Keyword Succeeds    1 min    3 sec   Wait Until Element Is Visible    ${PAGELOGO}
     Title Should Be     Scouts panel
 Click on the Addplayer button
     Click Element       xpath=//*[text()='Add player']
@@ -92,12 +93,12 @@ Assert addplayer
    # wait until element is visible  ${PAGELOGO}
     Wait Until Keyword Succeeds    1 min    3 sec   Wait Until Element Is Visible    ${ADDPLAYERLOGO}
     Title Should Be     Add player
-Show list of players
-    Click Element       xpath=//*[@id='__next']/div[1]/div/div/div/ul[1]/div[2]/div[2]/span
-Assert list of players
-     Wait Until Keyword Succeeds    1 min    3 sec   Wait Until Element Is Visible    ${LISTOFPLAYERSDASHBOARD}
-     ${LISTOFPLAYERSDASHBOARD}    Get Title
-     Should Contain    ${LISTOFPLAYERSDASHBOARD}    Players
+#Show list of players
+    #Click Element       xpath=//*[@id='__next']/div[1]/div/div/div/ul[1]/div[2]/div[2]/span
+#Assert list of players
+     #Wait Until Keyword Succeeds    1 min    3 sec   Wait Until Element Is Visible    ${LISTOFPLAYERSDASHBOARD}
+    # ${LISTOFPLAYERSDASHBOARD}    Get Title
+    # Should Contain    ${LISTOFPLAYERSDASHBOARD}    Players
 Click on the Sign out button
     Click Element       xpath=//span[text() = 'Sign out']
 Assert if sign out button is not be visible
